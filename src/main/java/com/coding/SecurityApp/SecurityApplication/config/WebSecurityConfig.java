@@ -22,7 +22,7 @@ public class WebSecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/posts", "/error", "public/**").permitAll()//it can be used for whitelisting certain api(making it public)
+                       // .requestMatchers("/posts", "/error", "public/**").permitAll()//it can be used for whitelisting certain api(making it public)
                         .requestMatchers("/posts/**").hasAnyRole("ADMIN")
                         .anyRequest().authenticated())
                 .csrf(csrfConfig -> csrfConfig.disable())
