@@ -40,6 +40,7 @@ public class AuthController {
         //cookie.setSecure();//it should be used for HTTPS request
 
         response.addCookie(cookie);
+        //this jwt token can be sent in every header request /or saved in cookies and used
         return ResponseEntity.ok(token);
     }
 
